@@ -1,0 +1,8 @@
+[build]
+  publish = "."
+
+# Keep the old filename working for any existing links
+[[redirects]]
+  from = "/interactive_portfolio_showcase.html"
+  to = "/"
+  status = 301
