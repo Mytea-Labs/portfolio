@@ -636,10 +636,6 @@ window.onload = async function() {
         loadSiteContent(data);
         loadPortfolioData(data);
     }
-    // Restore admin session after a page refresh (the server still verifies every save)
-    if (adminToken && Number(adminToken.split('.')[0]) > Date.now()) {
-        unlockAdminUI();
-    } else if (adminToken) {
-        lockAdmin();
-    }
+    // Admin mode never carries over between visits; log in again to edit or delete
+    if (adminToken) lockAdmin();
 };
